@@ -19,7 +19,7 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    image: "/lt.jpg",
+    image: "/LT.jpg",
     title: "LT WORK",
     companyName: "Rausheena Technical Services",
     description: "We provide comprehensive low tension electrical services including design, installation, maintenance and repair for residential and commercial properties.",
