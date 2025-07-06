@@ -3,6 +3,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import '@/styles/globals.css';
 
+
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -21,6 +23,9 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen pt-20">{children}</main>
         <Footer />
+        
+        {/* Floating Social Dock - Appears on all pages */}
+
       </body>
     </html>
   );

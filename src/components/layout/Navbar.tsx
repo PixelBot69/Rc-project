@@ -10,16 +10,22 @@ import {
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
-import { Menu, X, Phone, Mail, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Menu, X, Phone, Mail, Facebook, Twitter, Linkedin, MapPin } from 'lucide-react';
 
 const Logo = () => (
-  <div className="flex items-center space-x-2">
-    <div className="relative w-12 h-8 flex items-center justify-center">
-      <img src="/images.jpeg" alt="Logo" className="h-12 w-auto" />
+  <div className="flex items-center space-x-4">
+    <div className="relative">
+      <div className="w-14 h-14 rounded-lg flex items-center justify-center ">
+        <img src="/images.jpeg" alt="Logo" className="h-10 w-auto " />
+      </div>
+      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-amber-700 rounded-sm"></div>
     </div>
     <div className="flex flex-col">
-      <span className="text-lg font-bold text-yellow-600">RC Power </span>
-      <span className="text-sm font-medium text-yellow-600">Project Limited</span>
+      <span className="text-2xl font-serif font-bold text-slate-900 tracking-tight">RC POWER</span>
+      <div className="flex items-center space-x-2">
+        <div className="w-6 h-px bg-amber-700"></div>
+        <span className="text-sm font-medium text-amber-700 tracking-wider uppercase">Project Limited</span>
+      </div>
     </div>
   </div>
 );
@@ -72,45 +78,58 @@ const NavbarComponent = () => {
 
   return (
     <header className={navbarClasses}>
-      {/* Top bar with social links and contact info */}
-      <div className="w-full bg-yellow-500 text-yellow-900 py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <span className="text-sm">Follow us —</span>
-            <div className="flex space-x-2">
-              <a href="#" className="hover:text-yellow-700">
-                <Facebook size={16} />
-              </a>
-              <a href="#" className="hover:text-yellow-700">
-                <Twitter size={16} />
-              </a>
-              <a href="#" className="hover:text-yellow-700">
-                <Linkedin size={16} />
-              </a>
-            </div>
-          </div>
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone size={16} />
-              <span className="text-sm text-yellow-900">(+91) 033-40636169</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail size={16} />
-              <span className="hidden sm:inline text-sm text-yellow-900">
-  contactus@ausheenagroup.com
-</span>
-
-            </div>
-          </div>
+      {/* Top bar with elegant golden design */}
+        <div className="w-full bg-slate-800 text-white border-b-2 border-amber-700">
+  <div className="container mx-auto px-4 py-2 sm:py-3">
+    <div className="flex justify-between items-center">
+      <div className="flex items-center space-x-3 sm:space-x-6">
+        <span className="text-xs sm:text-sm font-medium text-stone-300 tracking-wide">Follow us</span>
+        <div className="h-3 sm:h-4 w-px bg-amber-700"></div>
+        <div className="flex space-x-2 sm:space-x-4">
+          <a href="#" className="text-stone-300 hover:text-amber-400 transition-colors duration-300 p-1">
+            <Facebook size={14} className="sm:w-4 sm:h-4" />
+          </a>
+          <a href="#" className="text-stone-300 hover:text-amber-400 transition-colors duration-300 p-1">
+            <Twitter size={14} className="sm:w-4 sm:h-4" />
+          </a>
+          <a href="#" className="text-stone-300 hover:text-amber-400 transition-colors duration-300 p-1">
+            <Linkedin size={14} className="sm:w-4 sm:h-4" />
+          </a>
         </div>
       </div>
+      <div className="flex items-center space-x-3 sm:space-x-8">
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-amber-700 rounded-full flex items-center justify-center">
+            <Phone size={12} className="text-white sm:w-3.5 sm:h-3.5" />
+          </div>
+          <span className="text-xs sm:text-sm font-medium text-white tracking-wide hidden xs:inline">
+            (+91) 033-40636169
+          </span>
+          <span className="text-xs font-medium text-white tracking-wide xs:hidden">
+            Call Us
+          </span>
+        </div>
+        <div className="hidden md:flex items-center space-x-3">
+          <div className="w-8 h-8 bg-amber-700 rounded-full flex items-center justify-center">
+            <Mail size={14} className="text-white" />
+          </div>
+          <span className="text-sm font-medium text-white tracking-wide">
+            contactus@ausheenagroup.com
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      {/* Main navigation */}
+      {/* Main navigation with refined design */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="z-10">
             <Logo />
           </Link>
+          
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-1">
@@ -122,7 +141,7 @@ const NavbarComponent = () => {
                       <NavigationMenuLink
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "relative hover:border-b-2 border-yellow-500 transition-all duration-200 text-yellow-700"
+                          "relative hover:border-b-2 border-amber-500 transition-all duration-200 text-amber-700 font-semibold"
                         )}
                       >
                         {item.title}
@@ -133,9 +152,10 @@ const NavbarComponent = () => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
+          
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden z-20 focus:outline-none text-yellow-700"
+            className="lg:hidden z-20 focus:outline-none text-amber-700"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -146,7 +166,7 @@ const NavbarComponent = () => {
                 <div className="py-2 border-b border-gray-100">
                   <Link 
                     href="/"
-                    className="block font-medium text-yellow-500"
+                    className="block font-medium text-amber-500"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Home
@@ -156,7 +176,7 @@ const NavbarComponent = () => {
                   <div key={index} className="py-2 border-b border-gray-100">
                     <Link 
                       href={item.href}
-                      className="block font-medium text-yellow-700"
+                      className="block font-medium text-amber-700"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.title}

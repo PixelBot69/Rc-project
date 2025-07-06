@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,78 +42,143 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      {/* Main Footer with diagonal cut */}
-      <div className="bg-white py-8 relative">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start">
-            {/* Logo and Company Info */}
-            <div className="mb-8 md:mb-0 max-w-md">
-              <div className="flex items-center mb-4">
-                <img src="/images.jpeg" alt="PowerGrid Logo" className="h-16 w-auto" />
+    <footer className="bg-slate-900 text-white">
+      {/* Main Footer Section */}
+      <div className="relative">
+        {/* Top decorative line */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-amber-700"></div>
+        
+        <div className="container mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            
+            {/* Company Info & Logo */}
+            <div className="lg:col-span-1">
+              <div className="mb-8">
+                <img src="/images.jpeg" alt="RC Power Logo" className="h-20 w-auto mb-6" />
+                <p className="text-stone-300 leading-relaxed font-light text-base">
+                  'A' Class Electrical & Civil Government Approved Contractors, registered with various Government of India Electrical Bodies since 1986.
+                </p>
               </div>
               
-              {/* Registered Office */}
-              <div className="mb-4">
-                <h3 className="text-yellow-900 font-semibold mb-2">Registered Office</h3>
-                <div className="flex items-start text-yellow-900">
-                  <div className="mr-2 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                    </svg>
-                  </div>
-                  <p className="text-sm">
-                    B-9, Qutab Institutional Area,<br />
-                    Katwaria Sarai, New Delhi-110016
-                  </p>
-                </div>
-              </div>
-              
-              {/* Corporate Office */}
+              {/* Social Media */}
               <div>
-                <h3 className="text-yellow-900 font-semibold mb-2">Corporate Office</h3>
-                <div className="flex items-start text-yellow-900">
-                  <div className="mr-2 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                <h3 className="text-xl font-serif font-medium text-white mb-6">Follow Us</h3>
+                <div className="w-12 h-0.5 bg-amber-700 mb-6"></div>
+                <div className="flex space-x-4">
+                  <a href="https://www.facebook.com/share/16gJCZWiY9/" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-stone-300 hover:bg-amber-700 hover:text-white transition-all duration-300">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
-                  </div>
-                  <p className="text-sm">
-                    Saudamini, Plot No.2, Sector 29, Gurgaon<br />
-                    (Haryana) - 122001, INDIA
-                  </p>
+                  </a>
+                  <a href="https://www.rcpplimited.com" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-stone-300 hover:bg-amber-700 hover:text-white transition-all duration-300">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.568 12.414c-.185.664-.42 1.293-.69 1.887-.225.494-.476.973-.75 1.434-.352.589-.727 1.15-1.126 1.68-.239.318-.485.625-.74.918-.52.599-1.06 1.16-1.622 1.677C12.865 19.79 12.44 20 12 20s-.865-.21-1.64-.99c-.562-.517-1.102-1.078-1.622-1.677-.255-.293-.501-.6-.74-.918-.399-.53-.774-1.091-1.126-1.68-.274-.461-.525-.94-.75-1.434-.27-.594-.505-1.223-.69-1.887C5.254 11.662 5.125 10.844 5.125 10c0-3.796 3.079-6.875 6.875-6.875S18.875 6.204 18.875 10c0 .844-.129 1.662-.307 2.414z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.instagram.com/rameshchoudhary_jpr?igsh=MXJjeW5kdjFvc3lpaQ==" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-stone-300 hover:bg-amber-700 hover:text-white transition-all duration-300">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Share Price */}
-            <div className="mb-8 md:mb-0">
-              <h3 className="text-yellow-900 font-semibold mb-3">Contact us</h3>
-              <div className="bg-white rounded-md p-3">
-                <div className="grid gap-4">
-                  <div className="flex items-center">
-                    <span className="text-yellow-900 mr-1 font-medium">Phone Number:</span>
-                    <span className=" px-2 py-1 rounded  text-yellow-900">8840948923</span>
+            {/* Contact Information */}
+            <div className="lg:col-span-1">
+              <h3 className="text-xl font-serif font-medium text-white mb-6">Contact Information</h3>
+              <div className="w-12 h-0.5 bg-amber-700 mb-8"></div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <Phone className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-stone-300 font-medium">Phone</p>
+                    <p className="text-white">+91 94621 63124</p>
                   </div>
-                  <div className="flex items-center">
-                    <span className="text-yellow-900 mr-1 font-medium">Email:</span>
-                    <span className=" px-2 py-1 rounded  text-yellow-900">indianpiear@gmail.com</span>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Mail className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-stone-300 font-medium">Email</p>
+                    <p className="text-white">rcpplimited733@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Mail className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-stone-300 font-medium">Website</p>
+                    <p className="text-white">www.rcpplimited.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Office Locations */}
+            <div className="lg:col-span-1">
+              <h3 className="text-xl font-serif font-medium text-white mb-6">Our Office</h3>
+              <div className="w-12 h-0.5 bg-amber-700 mb-8"></div>
+              
+              <div className="space-y-6">
+                {/* Registered Office */}
+                <div>
+                  <div className="flex items-start space-x-4 mb-3">
+                    <MapPin className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
+                    <h4 className="text-white font-medium">Registered Office</h4>
+                  </div>
+                  <p className="text-stone-300 text-sm leading-relaxed ml-9">
+                    P.No. B4/32, South Part,<br />
+                    Chitrakoot, Vaishali Nagar,<br />
+                    Jaipur-302021 (RAJ.)
+                  </p>
+                </div>
+
+                {/* Company Registration Details */}
+                <div className="pt-4 border-t border-slate-700">
+                  <h4 className="text-white font-medium mb-3">Company Details</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex">
+                      <span className="text-stone-400 w-12">CIN:</span>
+                      <span className="text-stone-300">U42909RJ2023PLC087797</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-stone-400 w-12">GST:</span>
+                      <span className="text-stone-300">08AAMCR6996H1ZI</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-stone-400 w-12">PAN:</span>
+                      <span className="text-stone-300">AAMCR6996H</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Services Links */}
-            <div>
-              <h3 className="text-yellow-900 font-semibold mb-4">Our Services</h3>
-              <ul className="grid grid-cols-1 gap-2">
+            <div className="lg:col-span-1">
+              <h3 className="text-xl font-serif font-medium text-white mb-6">Our Services</h3>
+              <div className="w-12 h-0.5 bg-amber-700 mb-8"></div>
+              
+              <ul className="space-y-3">
                 {serviceCategories.map((category, index) => (
                   <li key={index}>
                     <Link 
                       href={category.href}
-                      className="text-yellow-900 hover:text-yellow-700 transition-colors text-sm flex items-center"
+                      className="text-stone-300 hover:text-amber-700 transition-colors duration-300 flex items-center group"
                     >
-                      <span className="mr-2">›</span>
+                      <span className="mr-3 text-amber-700 group-hover:translate-x-1 transition-transform duration-300">→</span>
                       {category.title}
                     </Link>
                   </li>
@@ -121,78 +186,46 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
-          {/* Social Media Links */}
-          <div className="mt-8">
-            <h3 className="text-yellow-900 font-semibold mb-3">Follow Us</h3>
-            <div className="flex space-x-4">
-              <Link href="https://facebook.com" className="bg-yellow-200 p-2 rounded-full text-yellow-900 hover:bg-yellow-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                </svg>
-              </Link>
-              <Link href="https://twitter.com" className="bg-yellow-200 p-2 rounded-full text-yellow-900 hover:bg-yellow-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                </svg>
-              </Link>
-              <Link href="https://youtube.com" className="bg-yellow-200 p-2 rounded-full text-yellow-900 hover:bg-yellow-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.013 1.103-.074 2.015l-.007.102-.01.103-.02.242-.01.104a6.32 6.32 0 0 1-.218 1.4 2.013 2.013 0 0 1-1.412 1.412c-1.136.31-5.258.332-6.104.335h-.089c-.822-.002-4.987-.033-6.11-.335a2.015 2.015 0 0 1-1.414-1.412 6.59 6.59 0 0 1-.222-1.4l-.007-.103-.007-.104-.02-.242-.01-.104c-.06-.91-.07-1.769-.072-1.955v-.076c.002-.193.014-1.103.072-2.013l.006-.103.008-.105.02-.241.01-.103a6.357 6.357 0 0 1 .22-1.4 2.014 2.014 0 0 1 1.412-1.42c1.124-.3 5.29-.333 6.11-.336zm-.035 3.507v4.2l3.645-2.1-3.646-2.1z"/>
-                </svg>
-              </Link>
-            </div>
-          </div>
         </div>
-
-        {/* Diagonal cut effect */}
-        <div 
-          className="absolute bottom-0 left-0 w-full h-16 bg-yellow-500" 
-          style={{ 
-            clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0% 100%)' 
-          }}
-        ></div>
       </div>
 
-      {/* Copyright Bar with diagonal cut at top */}
-      <div className="bg-yellow-500 text-white pt-16 pb-4 relative">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between">
+      {/* Bottom Footer Section */}
+      <div className="bg-slate-800 border-t border-slate-700">
+        <div className="container mx-auto px-6 py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0">
+            
             {/* Policy Links */}
-            <div className="flex flex-wrap gap-4 mb-4 md:mb-0">
-              <Link href="/copyright-policy" className="text-xs text-yellow-800 hover:underline hover:text-yellow-800">Copyright Policy</Link>
-              <span className="text-xs">|</span>
-              <Link href="/hyperlinking-policy" className="text-xs text-yellow-800 hover:underline hover:text-yellow-800">Hyperlinking Policy</Link>
-              <span className="text-xs">|</span>
-              <Link href="/disclaimer" className="text- text-yellow-800 hover:underline hover:text-yellow-800">Disclaimer</Link>
-              <span className="text-xs">|</span>
-              <Link href="/privacy-policy" className="text-xs text-yellow-800 hover:underline hover:text-yellow-800">Privacy Policy</Link>
-              <span className="text-xs">|</span>
-              <Link href="/terms-conditions" className="text-xs text-yellow-800 hover:underline hover:text-yellow-800">Terms & Conditions</Link>
-              <span className="text-xs">|</span>
-              <Link href="/rtia" className="text-xs text-yellow-800 hover:underline hover:text-yellow-800">RTI Act</Link>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <Link href="/copyright-policy" className="text-sm text-stone-400 hover:text-amber-700 transition-colors duration-300">Copyright Policy</Link>
+              <Link href="/hyperlinking-policy" className="text-sm text-stone-400 hover:text-amber-700 transition-colors duration-300">Hyperlinking Policy</Link>
+              <Link href="/disclaimer" className="text-sm text-stone-400 hover:text-amber-700 transition-colors duration-300">Disclaimer</Link>
+              <Link href="/privacy-policy" className="text-sm text-stone-400 hover:text-amber-700 transition-colors duration-300">Privacy Policy</Link>
+              <Link href="/terms-conditions" className="text-sm text-stone-400 hover:text-amber-700 transition-colors duration-300">Terms & Conditions</Link>
+              <Link href="/rtia" className="text-sm text-stone-400 hover:text-amber-700 transition-colors duration-300">RTI Act</Link>
             </div>
 
-            {/* Update & Visitors */}
-            <div className="text-xs text-yellow-800">
-              <div>Last Updated : 21 May, 2025</div>
-              <div>Visitors Count : 620012</div>
+            {/* Update & Visitors Info */}
+            <div className="text-sm text-stone-400 space-y-1">
+              <div>Last Updated: {new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
+              <div>Visitors Count: 620,012</div>
             </div>
           </div>
 
+          <Separator className="my-6 bg-slate-700" />
+
           {/* Copyright Text */}
-          <div className="mt-4 text- text-yellow-800">
-            Copyright © {currentYear} Power Grid Corporation of India Ltd. (POWERGRID), Ministry of Power. All Rights Reserved
+          <div className="text-center text-sm text-stone-400">
+            <p>Copyright © {currentYear} RC POWER Project Limited. All Rights Reserved.</p>
           </div>
         </div>
 
         {/* Scroll to top button */}
         <button 
           onClick={scrollToTop}
-          className="absolute right-8 bottom-16 bg-yellow-200 text-yellow-900 p-3 rounded-full shadow-lg hover:bg-yellow-300 transition-colors"
+          className="fixed right-8 bottom-8 w-14 h-14 bg-amber-700 text-white rounded-full shadow-xl hover:bg-amber-600 hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 z-50 group"
           aria-label="Scroll to top"
         >
-          <ArrowUp size={20} />
+          <ArrowUp className="w-6 h-6 mx-auto group-hover:-translate-y-0.5 transition-transform duration-300" />
         </button>
       </div>
     </footer>

@@ -23,8 +23,8 @@ const services: Service[] = [
     title: "LT WORK",
     companyName: "Rausheena Technical Services",
     description: "We provide comprehensive low tension electrical services including design, installation, maintenance and repair for residential and commercial properties.",
-    icon: <Zap className="w-6 h-6 text-yellow-600" />,
-    color: "bg-yellow-400"
+    icon: <Zap className="w-6 h-6 text-amber-700" />,
+    color: "bg-amber-100"
   },
   {
     id: 2,
@@ -32,8 +32,8 @@ const services: Service[] = [
     title: "132 KVA GSS",
     companyName: "Rausheena Power Systems",
     description: "Our expertise in 132 KVA Grid Substations allows us to handle large-scale power infrastructure projects with complete solutions.",
-    icon: <Gauge className="w-6 h-6 text-yellow-700" />,
-    color: "bg-yellow-500"
+    icon: <Gauge className="w-6 h-6 text-amber-700" />,
+    color: "bg-amber-100"
   },
   {
     id: 3,
@@ -41,8 +41,8 @@ const services: Service[] = [
     title: "CCTV WORK",
     companyName: "Rausheena Security Solutions",
     description: "We provide state-of-the-art CCTV surveillance systems with advanced monitoring capabilities and expert installation services.",
-    icon: <Shield className="w-6 h-6 text-yellow-500" />,
-    color: "bg-yellow-300"
+    icon: <Shield className="w-6 h-6 text-amber-700" />,
+    color: "bg-amber-100"
   },
   {
     id: 4,
@@ -50,8 +50,8 @@ const services: Service[] = [
     title: "SOLAR WORK",
     companyName: "Rausheena Renewable Energy",
     description: "Our solar power solutions include system design, installation, and maintenance for residential, commercial, and industrial applications.",
-    icon: <Sun className="w-6 h-6 text-yellow-600" />,
-    color: "bg-yellow-400"
+    icon: <Sun className="w-6 h-6 text-amber-700" />,
+    color: "bg-amber-100"
   },
   {
     id: 5,
@@ -59,8 +59,8 @@ const services: Service[] = [
     title: "INDUSTRIAL AUTOMATION",
     companyName: "Rausheena Automation Systems",
     description: "We specialize in industrial automation solutions including SCADA systems, PLC programming, HMI development, and process control integration.",
-    icon: <Cpu className="w-6 h-6 text-yellow-700" />,
-    color: "bg-yellow-500"
+    icon: <Cpu className="w-6 h-6 text-amber-700" />,
+    color: "bg-amber-100"
   },
   {
     id: 6,
@@ -68,8 +68,8 @@ const services: Service[] = [
     title: "HT WORK",
     companyName: "Rausheena Power Infrastructure",
     description: "Our High Tension electrical services cover transmission lines, substations, and power distribution networks for industrial and utility-scale projects.",
-    icon: <Building className="w-6 h-6 text-yellow-600" />,
-    color: "bg-yellow-400"
+    icon: <Building className="w-6 h-6 text-amber-700" />,
+    color: "bg-amber-100"
   },
 ];
 
@@ -79,7 +79,7 @@ const BusinessServicesSlider: React.FC = () => {
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
+      x: direction > 0 ? 100 : -100,
       opacity: 0,
     }),
     center: {
@@ -87,7 +87,7 @@ const BusinessServicesSlider: React.FC = () => {
       opacity: 1,
     },
     exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300,
+      x: direction < 0 ? 100 : -100,
       opacity: 0,
     }),
   };
@@ -118,33 +118,30 @@ const BusinessServicesSlider: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-yellow-50 py-16 px-4">
+    <div className="min-h-screen bg-stone-50 py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <motion.div
-            className="inline-flex items-center gap-2 mb-4"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="w-8 h-8 bg-yellow-600 rounded-lg flex items-center justify-center">
-              <Building className="w-5 h-5 text-yellow-50" />
-            </div>
-            <Badge variant="secondary" className="text-sm font-medium text-yellow-700 bg-yellow-200">
+          {/* Elegant badge */}
+          <div className="inline-flex items-center mb-8">
+            <div className="h-px w-16 bg-amber-700 mr-6"></div>
+            <span className="text-amber-700 text-sm font-medium tracking-wider uppercase">
               Our Services
-            </Badge>
-          </motion.div>
+            </span>
+            <div className="h-px w-16 bg-amber-700 ml-6"></div>
+          </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-800 via-yellow-600 to-yellow-800 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl lg:text-6xl font-serif font-light text-slate-900 mb-6 tracking-tight">
             Business Verticals
           </h1>
           
-          <p className="text-lg text-yellow-700 max-w-2xl mx-auto leading-relaxed">
+          <div className="w-24 h-0.5 bg-amber-700 mx-auto mb-8"></div>
+          
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
             Rausheena Group specializes in six core business verticals, delivering comprehensive solutions 
             across electrical, automation, and security sectors.
           </p>
@@ -153,30 +150,30 @@ const BusinessServicesSlider: React.FC = () => {
         {/* Main Slider */}
         <div className="relative">
           {/* Navigation Buttons */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 -ml-4">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 -ml-6">
             <Button
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="w-12 h-12 rounded-full bg-yellow-100/90 backdrop-blur-sm border-2 border-yellow-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="w-14 h-14 rounded-full bg-white border border-slate-300 shadow-lg hover:bg-slate-50 hover:border-amber-700 transition-all duration-300"
             >
-              <ChevronLeft className="w-5 h-5 text-yellow-700" />
+              <ChevronLeft className="w-6 h-6 text-slate-700" />
             </Button>
           </div>
           
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 -mr-4">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 -mr-6">
             <Button
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="w-12 h-12 rounded-full bg-yellow-100/90 backdrop-blur-sm border-2 border-yellow-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="w-14 h-14 rounded-full bg-white border border-slate-300 shadow-lg hover:bg-slate-50 hover:border-amber-700 transition-all duration-300"
             >
-              <ChevronRight className="w-5 h-5 text-yellow-700" />
+              <ChevronRight className="w-6 h-6 text-slate-700" />
             </Button>
           </div>
 
           {/* Cards Container */}
-          <div className="overflow-hidden px-4">
+          <div className="overflow-hidden px-8">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -186,45 +183,50 @@ const BusinessServicesSlider: React.FC = () => {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.3 },
+                  x: { type: "spring", stiffness: 200, damping: 25 },
+                  opacity: { duration: 0.4 },
                 }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+                className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
               >
                 {getVisibleCards().map((service, index) => (
                   <motion.div
                     key={`${service.id}-${currentIndex}`}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ 
-                      opacity: service.position === 0 ? 1 : 0.7,
+                      opacity: service.position === 0 ? 1 : 0.6,
                       y: 0,
                       scale: service.position === 0 ? 1 : 0.95,
                     }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.15 }}
                     className={`${service.position === 0 ? 'md:order-2' : service.position === -1 ? 'md:order-1' : 'md:order-3'} ${service.position !== 0 ? 'hidden md:block' : ''}`}
                   >
-                    <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-yellow-50/80 backdrop-blur-sm">
+                    <Card className="group overflow-hidden border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-500 bg-white">
                       <div className="relative overflow-hidden">
                         <img
                           src={service.image}
                           alt={service.title}
-                          className="w-full h-48 object-cover rounded-t-lg transform group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className={`absolute top-4 left-4 p-2 rounded-md ${service.color} bg-opacity-70 shadow-md`}>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div className={`absolute top-6 left-6 p-3 rounded-lg ${service.color} shadow-md`}>
                           {service.icon}
                         </div>
                       </div>
 
-                      <CardHeader className="px-6 pt-6">
-                        <CardTitle className="text-yellow-900 text-2xl font-semibold tracking-wide">
+                      <CardHeader className="px-8 pt-8 pb-4">
+                        <CardTitle className="text-slate-900 text-2xl font-serif font-medium tracking-wide mb-2">
                           {service.title}
                         </CardTitle>
-                        <CardDescription className="text-yellow-800 font-semibold text-sm mt-1">
+                        <CardDescription className="text-amber-700 font-medium text-base">
                           {service.companyName}
                         </CardDescription>
                       </CardHeader>
-                      <CardContent className="px-6 pb-6 text-yellow-700 leading-relaxed text-sm">
-                        {service.description}
+                      
+                      <CardContent className="px-8 pb-8">
+                        <div className="w-12 h-0.5 bg-amber-700 mb-4"></div>
+                        <p className="text-slate-600 leading-relaxed font-light text-base">
+                          {service.description}
+                        </p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -234,19 +236,34 @@ const BusinessServicesSlider: React.FC = () => {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center gap-3 mt-12">
+          <div className="flex justify-center gap-4 mt-16">
             {services.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => goToSlide(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`w-4 h-4 rounded-full transition-colors duration-300 ${
-                  idx === currentIndex ? "bg-yellow-600 shadow-lg shadow-yellow-300" : "bg-yellow-300 hover:bg-yellow-400"
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  idx === currentIndex 
+                    ? "bg-amber-700 shadow-lg scale-125" 
+                    : "bg-slate-300 hover:bg-slate-400"
                 }`}
               />
             ))}
           </div>
         </div>
+
+        {/* Bottom CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-20"
+        >
+          <div className="inline-flex items-center px-8 py-4 bg-slate-900 text-white font-medium tracking-wide hover:bg-amber-700 transition-colors duration-300 group cursor-pointer">
+            <span>Explore All Services</span>
+            <ArrowRight className="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform duration-300" />
+          </div>
+        </motion.div>
       </div>
     </div>
   );

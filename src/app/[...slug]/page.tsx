@@ -90,111 +90,145 @@ export default async function ServicePage({ params, searchParams }: ServicePageP
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-yellow-50">
-      {/* Header */}
-    
+    <div className="min-h-screen bg-stone-50">
+      {/* Hero Section */}
+      <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-amber-700"></div>
+        
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center mb-8">
+              <div className="h-px w-20 bg-amber-700 mr-6"></div>
+              <span className="text-amber-400 text-sm font-medium tracking-wider uppercase">
+                Our Expertise
+              </span>
+              <div className="h-px w-20 bg-amber-700 ml-6"></div>
+            </div>
+            
+            <h1 className="text-5xl lg:text-6xl font-serif font-light mb-6 tracking-tight">
+              Our Services
+            </h1>
+            
+            <div className="w-24 h-0.5 bg-amber-700 mx-auto mb-8"></div>
+            
+            <p className="text-xl text-stone-300 leading-relaxed font-light max-w-3xl mx-auto">
+              Comprehensive solutions across electrical, automation, and infrastructure sectors
+            </p>
+          </div>
+        </div>
+        
+        {/* Decorative elements */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex space-x-4">
+            <div className="w-2 h-2 bg-amber-700 rotate-45"></div>
+            <div className="w-2 h-2 bg-amber-700/60 rotate-45"></div>
+            <div className="w-2 h-2 bg-amber-700/30 rotate-45"></div>
+            <div className="w-2 h-2 bg-amber-700/60 rotate-45"></div>
+            <div className="w-2 h-2 bg-amber-700 rotate-45"></div>
+          </div>
+        </div>
+      </section>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-light text-amber-900 mb-4 tracking-wide">OUR SERVICES</h1>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 mx-auto"></div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+      <div className="container mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
           {/* Left Column - Service 01 */}
-          <div className="bg-white rounded-lg shadow-lg border border-amber-100 overflow-hidden flex flex-col">
-            {/* Service Image - Fixed gap issue */}
-            <div className="aspect-[4/3] relative overflow-hidden flex-shrink-0">
+          <div className="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden">
+            {/* Service Image */}
+            <div className="aspect-[4/3] relative overflow-hidden">
               <Image
                 src={mockServices[0].image}
                 alt={mockServices[0].title}
                 fill
-                className="object-cover block"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
             
             {/* Service Content */}
-            <div className="p-8 flex-grow">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-500 rounded mr-3 flex items-center justify-center">
-                  <span className="text-sm font-medium text-white">{mockServices[0].id}</span>
+            <div className="p-8">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-slate-900 rounded-full mr-4 flex items-center justify-center">
+                  <span className="text-lg font-serif font-medium text-white">{mockServices[0].id}</span>
                 </div>
-                <h2 className="text-2xl font-light text-amber-900">Service {mockServices[0].id} {mockServices[0].title}</h2>
+                <h2 className="text-2xl font-serif font-medium text-slate-900">{mockServices[0].title}</h2>
               </div>
               
-              <p className="text-amber-800 mb-6 leading-relaxed">
+              <div className="w-12 h-0.5 bg-amber-700 mb-6"></div>
+              
+              <p className="text-slate-600 mb-8 leading-relaxed font-light text-lg">
                 {mockServices[0].description}
               </p>
 
               {/* Service Content */}
-              <div className="mb-6">
+              <div className="mb-8">
                 <div 
-                  className="text-amber-800 leading-relaxed prose prose-sm max-w-none prose-headings:text-amber-900"
+                  className="text-slate-600 leading-relaxed prose prose-sm max-w-none prose-headings:text-slate-900 font-light"
                   dangerouslySetInnerHTML={{ __html: mockServices[0].content }}
                 />
               </div>
 
               {/* Service Features */}
-              <div className="space-y-4">
+              <div className="space-y-6 mb-8">
+                <h4 className="text-xl font-serif font-medium text-slate-900">Key Features</h4>
+                <div className="w-8 h-0.5 bg-amber-700 mb-6"></div>
                 {mockServices[0].features.map((feature, index) => {
                   const [title, description] = feature.includes(':') 
                     ? [feature.split(':')[0], feature.split(':')[1]] 
                     : [feature, ''];
                   
                   return (
-                    <div key={index} className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="font-medium text-amber-900 mb-1">{title}</h4>
-                        {description && <p className="text-sm text-amber-700">{description.trim()}</p>}
-                      </div>
+                    <div key={index} className="border-l-2 border-amber-700 pl-6 py-2">
+                      <h5 className="font-medium text-slate-900 mb-2">{title}</h5>
+                      {description && <p className="text-slate-600 font-light leading-relaxed">{description.trim()}</p>}
                     </div>
                   );
                 })}
               </div>
 
               {/* Additional Service Details */}
-              <div className="mt-8 pt-6 border-t border-amber-100">
-                <h4 className="font-medium text-amber-900 mb-4">Why Choose This Service?</h4>
-                <ul className="space-y-2 text-sm text-amber-700">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0" />
-                    Industry-leading expertise and experience
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0" />
-                    Comprehensive warranty and support
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0" />
-                    Competitive pricing and flexible payment options
-                  </li>
-                </ul>
+              <div className="pt-6 border-t border-slate-200">
+                <h4 className="text-lg font-serif font-medium text-slate-900 mb-4">Why Choose This Service?</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-amber-700 mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600 font-light">Industry-leading expertise and experience</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-amber-700 mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600 font-light">Comprehensive warranty and support</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-amber-700 mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600 font-light">Competitive pricing and flexible payment options</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Column - Service 02 */}
-          <div className="bg-white rounded-lg shadow-lg border border-amber-100 overflow-hidden flex flex-col">
+          <div className="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden">
             {/* Service Content */}
-            <div className="p-8 flex-grow">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-500 rounded mr-3 flex items-center justify-center">
-                  <span className="text-sm font-medium text-white">{mockServices[1].id}</span>
+            <div className="p-8">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-slate-900 rounded-full mr-4 flex items-center justify-center">
+                  <span className="text-lg font-serif font-medium text-white">{mockServices[1].id}</span>
                 </div>
-                <h2 className="text-2xl font-light text-amber-900">Service {mockServices[1].id} {mockServices[1].title}</h2>
+                <h2 className="text-2xl font-serif font-medium text-slate-900">{mockServices[1].title}</h2>
               </div>
               
-              <p className="text-amber-800 mb-6 leading-relaxed">
+              <div className="w-12 h-0.5 bg-amber-700 mb-6"></div>
+              
+              <p className="text-slate-600 mb-8 leading-relaxed font-light text-lg">
                 {mockServices[1].description}
               </p>
 
               {/* Service Content */}
               <div className="mb-8">
                 <div 
-                  className="text-amber-800 leading-relaxed prose prose-sm max-w-none prose-headings:text-amber-900"
+                  className="text-slate-600 leading-relaxed prose prose-sm max-w-none prose-headings:text-slate-900 font-light"
                   dangerouslySetInnerHTML={{ __html: mockServices[1].content }}
                 />
               </div>
@@ -202,40 +236,42 @@ export default async function ServicePage({ params, searchParams }: ServicePageP
               {/* Service Icons */}
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-lg mx-auto mb-3 flex items-center justify-center border border-amber-200">
-                    <Package className="w-6 h-6 text-amber-700" />
+                  <div className="w-16 h-16 bg-stone-100 border border-slate-200 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                    <Package className="w-8 h-8 text-amber-700" />
                   </div>
-                  <p className="text-xs text-amber-800 font-medium">SUPPLY</p>
+                  <p className="text-sm text-slate-700 font-medium tracking-wide">SUPPLY</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-lg mx-auto mb-3 flex items-center justify-center border border-amber-200">
-                    <Wrench className="w-6 h-6 text-amber-700" />
+                  <div className="w-16 h-16 bg-stone-100 border border-slate-200 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                    <Wrench className="w-8 h-8 text-amber-700" />
                   </div>
-                  <p className="text-xs text-amber-800 font-medium">INSTALLATION</p>
+                  <p className="text-sm text-slate-700 font-medium tracking-wide">INSTALLATION</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-lg mx-auto mb-3 flex items-center justify-center border border-amber-200">
-                    <Settings className="w-6 h-6 text-amber-700" />
+                  <div className="w-16 h-16 bg-stone-100 border border-slate-200 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                    <Settings className="w-8 h-8 text-amber-700" />
                   </div>
-                  <p className="text-xs text-amber-800 font-medium">SITE SUPPORT</p>
+                  <p className="text-sm text-slate-700 font-medium tracking-wide">SUPPORT</p>
                 </div>
               </div>
 
               {/* Service Features for Service 02 */}
               <div className="space-y-4 mb-8">
-                {mockServices[1].features.map((feature, index) => {
+                <h4 className="text-xl font-serif font-medium text-slate-900">Service Features</h4>
+                <div className="w-8 h-0.5 bg-amber-700 mb-6"></div>
+                {mockServices[1].features.slice(0, 4).map((feature, index) => {
                   const [title, description] = feature.includes(':') 
                     ? [feature.split(':')[0], feature.split(':')[1]] 
                     : [feature, ''];
                   
                   return (
                     <div key={index} className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-amber-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                       <div>
-                        <h4 className="font-medium text-amber-900 mb-1">{title}</h4>
-                        {description && <p className="text-sm text-amber-700">{description.trim()}</p>}
+                        <h5 className="font-medium text-slate-900 mb-1">{title}</h5>
+                        {description && <p className="text-slate-600 font-light leading-relaxed">{description.trim()}</p>}
                       </div>
                     </div>
                   );
@@ -244,74 +280,88 @@ export default async function ServicePage({ params, searchParams }: ServicePageP
 
               {/* Process Timeline */}
               <div className="mb-8">
-                <h4 className="font-medium text-amber-900 mb-4">Our Process</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center text-sm text-amber-700">
-                    <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center mr-3 text-xs font-medium text-white">1</div>
-                    Initial consultation and site assessment
-                  </div>
-                  <div className="flex items-center text-sm text-amber-700">
-                    <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center mr-3 text-xs font-medium text-white">2</div>
-                    Design development and material selection
-                  </div>
-                  <div className="flex items-center text-sm text-amber-700">
-                    <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center mr-3 text-xs font-medium text-white">3</div>
-                    Project execution and quality control
-                  </div>
-                  <div className="flex items-center text-sm text-amber-700">
-                    <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center mr-3 text-xs font-medium text-white">4</div>
-                    Final inspection and handover
-                  </div>
+                <h4 className="text-lg font-serif font-medium text-slate-900 mb-4">Our Process</h4>
+                <div className="w-8 h-0.5 bg-amber-700 mb-6"></div>
+                <div className="space-y-4">
+                  {[
+                    "Initial consultation and site assessment",
+                    "Design development and material selection", 
+                    "Project execution and quality control",
+                    "Final inspection and handover"
+                  ].map((step, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center mr-4 text-sm font-medium text-white">
+                        {index + 1}
+                      </div>
+                      <span className="text-slate-600 font-light">{step}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             
-            {/* Service Image - Fixed gap issue */}
-            <div className="aspect-[4/3] relative overflow-hidden flex-shrink-0">
+            {/* Service Image */}
+            <div className="aspect-[4/3] relative overflow-hidden">
               <Image
                 src={mockServices[1].image}
                 alt={mockServices[1].title}
                 fill
-                className="object-cover block"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
           </div>
         </div>
 
         {/* Additional Service Information */}
-        <div className="max-w-6xl mx-auto mt-16">
+        <div className="max-w-7xl mx-auto mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-lg border border-amber-100 p-8">
-              <h3 className="text-xl font-light text-amber-900 mb-4">Service Guarantee</h3>
-              <p className="text-amber-800 mb-4">
+            <div className="bg-white rounded-lg shadow-lg border border-slate-200 p-8">
+              <h3 className="text-2xl font-serif font-medium text-slate-900 mb-4">Service Guarantee</h3>
+              <div className="w-12 h-0.5 bg-amber-700 mb-6"></div>
+              <p className="text-slate-600 mb-6 font-light leading-relaxed">
                 We stand behind our work with comprehensive warranties and ongoing support. Our commitment to excellence ensures your complete satisfaction with every project.
               </p>
-              <ul className="space-y-2 text-sm text-amber-700">
-                <li>• 5-year warranty on all installations</li>
-                <li>• 24/7 emergency support available</li>
-                <li>• Regular maintenance programs</li>
-                <li>• Quality assurance inspections</li>
-              </ul>
+              <div className="space-y-3">
+                {[
+                  "5-year warranty on all installations",
+                  "24/7 emergency support available",
+                  "Regular maintenance programs",
+                  "Quality assurance inspections"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-700 rounded-full mr-3"></div>
+                    <span className="text-slate-600 font-light">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div className="bg-white rounded-lg shadow-lg border border-amber-100 p-8">
-              <h3 className="text-xl font-light text-amber-900 mb-4">Contact Information</h3>
-              <p className="text-amber-800 mb-4">
+            <div className="bg-white rounded-lg shadow-lg border border-slate-200 p-8">
+              <h3 className="text-2xl font-serif font-medium text-slate-900 mb-4">Contact Information</h3>
+              <div className="w-12 h-0.5 bg-amber-700 mb-6"></div>
+              <p className="text-slate-600 mb-6 font-light leading-relaxed">
                 Ready to get started? Contact our team of experts to discuss your project requirements and receive a personalized quote.
               </p>
-              <div className="space-y-3 text-sm text-amber-700">
+              <div className="space-y-4">
                 <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-3 text-amber-600" />
-                  +91 978-273-0455
+                  <div className="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center mr-4">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-slate-600 font-light">+91 978-273-0455</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-3 text-amber-600" />
-                  info@company.com
+                  <div className="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center mr-4">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-slate-600 font-light">info@company.com</span>
                 </div>
                 <div className="flex items-center">
-                  <Users className="w-4 h-4 mr-3 text-amber-600" />
-                  Free consultation available
+                  <div className="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center mr-4">
+                    <Users className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-slate-600 font-light">Free consultation available</span>
                 </div>
               </div>
             </div>
@@ -319,18 +369,17 @@ export default async function ServicePage({ params, searchParams }: ServicePageP
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Button 
-            className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-none font-light tracking-wide mr-4 shadow-lg"
-          >
-            Get Started
-          </Button>
-          <Button 
-            variant="outline"
-            className="border-amber-400 text-amber-800 hover:bg-amber-50 px-8 py-3 rounded-none font-light tracking-wide shadow-lg"
-          >
-            Learn More
-          </Button>
+        <div className="text-center mt-20">
+          <div className="inline-flex items-center space-x-6">
+            <div className="inline-flex items-center px-10 py-4 bg-slate-900 text-white font-medium tracking-wide hover:bg-amber-700 transition-colors duration-300 group cursor-pointer">
+              <span className="text-lg mr-4">Get Started</span>
+              <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </div>
+            
+            <div className="inline-flex items-center px-10 py-4 border-2 border-slate-900 text-slate-900 font-medium tracking-wide hover:bg-slate-900 hover:text-white transition-all duration-300 cursor-pointer">
+              <span className="text-lg">Learn More</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
